@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { difficulty, fetchQuestions } from './API';
+import { fetchQuestions } from './API';
 
 // Components
 import QuestionCard from './components/QuestionCard';
@@ -13,6 +13,9 @@ const App = () => {
   const [userAnswers, setUserAnswers] = useState([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
+  const [difficulty, setDifficulty] = useState("easy");
+
+  const handleDifficulty = e => setDifficulty(e.target.value);
 
   const startTrivia = async () => {
     setLoading(true);
@@ -20,7 +23,7 @@ const App = () => {
 
     const newQuestions = await fetchQuestions(
       TOTAL_QUESTIONS, 
-      difficulty.EASY,
+      difficulty
     );
 
     setQuestions(newQuestions);
@@ -63,7 +66,17 @@ const App = () => {
       </h1>
 
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-        <button className="start" onClick={startTrivia}>Start Trivia</button>
+        <>
+          <label>Choose a difficulty:
+            <select onChange={handleDifficulty}>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+
+          <button className="start" onClick={startTrivia}>Start Trivia</button>
+        </>
       ) : null}
 
       <p className="score">Score: {score}</p>
