@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fetchQuestions } from './API';
+import { difficulty, fetchQuestions } from './API';
 
 // Components
 import QuestionCard from './components/QuestionCard';
@@ -14,10 +14,20 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
 
-  console.log(fetchQuestions(10, "easy"));
+  const startTrivia = async () => {
+    setLoading(true);
+    setGameOver(false);
 
-  const startTrivia = async => {
+    const newQuestions = await fetchQuestions(
+      TOTAL_QUESTIONS, 
+      difficulty.EASY,
+    );
 
+    setQuestions(newQuestions);
+    setScore(0);
+    setUserAnswers([]);
+    setNumber(0);
+    setLoading(false);
   }
 
   const checkAnswer = (e) => {
