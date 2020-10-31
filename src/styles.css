@@ -2,8 +2,10 @@
   --beet: #8B134D;
   --salmon: #EDAE9F;
   --yellow: #FFFF22;
+  --whitesmoke: #FFFDFC;
   --green: #2C4023;
   --slate: #343434;
+  --light_blue: #0A2C49;
   --dark_blue: #001229;
 }
 
@@ -46,17 +48,30 @@ textarea, button, select {
   appearance: none;
 }
 
+button { cursor: pointer; }
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
 /* MAIN */
 
 .App {
+  /* background: var(--salmon); */
+  display: relative;
+  margin: 50px 100px;
   text-align: center;
+  width: 50rem;
 }
+
 h1 {
   color: var(--dark_blue);
-  font-size: 36px;
+  border-bottom: 1.5px solid var(--dark_blue);
+  font-size: 48px;
   font-weight: 400;
   position: relative;
-  margin: 40px auto 15px;
+  margin: 5rem auto 15px;
   width: fit-content;
 }
 
@@ -80,5 +95,51 @@ h1 {
   width: 50px; height: 50px;
   margin: 0 10px;
 }
+
+.start, .next {
+  background: var(--dark_blue);
+  color: #fff;
+  cursor: pointer;
+  padding: 20px 35px; 
+  margin: 20px;
+  transition: all .15s ease-in-out; }
+.start:hover, .next:hover {
+  background: var(--light_blue);
+}
+
+.restart {
+  display: absolute;
+  font-size: 24px;
+  margin: 20px 24px 0;
+  text-align: right !important;
+}
+
+.question {
+  margin: 10px;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.answer-wrapper {
+  width: 200px;
+}
+
+.answer:hover {
+  background: var(--green);
+  color: var(--yellow);
+}
+button:disabled, button[disabled] {
+  cursor: default;
+  color: #999 !important;
+}
+
+.correct.clicked, .correct.notclicked{
+  background: var(--green) }
+.incorrect.clicked{
+  background: var(--beet); }
 
 /* QUESTION CARD */
