@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles.css';
 import { fetchQuestions } from './API';
 
 // Components
@@ -15,7 +16,11 @@ const App = () => {
   const [gameOver, setGameOver] = useState(true);
   const [difficulty, setDifficulty] = useState("easy");
 
-  const handleDifficulty = e => setDifficulty(e.target.value);
+  // Set difficultiness 
+  const handleDiff = e => {
+    console.log(e.target);
+    setDifficulty(e.target.value);
+  }
 
   const startTrivia = async () => {
     setLoading(true);
@@ -49,7 +54,7 @@ const App = () => {
   }
 
   const nextQuestion = () => {
-    //Move onto the next question
+    // Move onto the next question
     const nextQuestion = number + 1;
 
     if (nextQuestion === TOTAL_QUESTIONS) {
@@ -61,34 +66,35 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>
+      <h1 className="title fl">
         Trivia Game
       </h1>
 
       {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
         <>
-          <label>Choose a difficulty:
-            <select onChange={handleDifficulty}>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </label>
+          <div className="difficulty">
+            <button value="easy" onClick={handleDiff}>Easy</button>
+            <button value="medium" onClick={handleDiff}>Med</button>
+            <button value="hard" onClick={handleDiff}>Hard</button>
+          </div>
 
           <button className="start" onClick={startTrivia}>Start Trivia</button>
         </>
       ) : null}
 
-      <p className="score">Score: {score}</p>
+      {number + 1 !== 0 && <p className="score">Score: {score}</p>}
+
+      {/* When questions are loading  */}
       {loading && <p>Loading questions...</p>}
       
+      {/* When questions are not loading and game is not over */}
       {!loading && !gameOver && (
         <QuestionCard 
           questionNumber={number + 1}
           totalQuestions={TOTAL_QUESTIONS}
           question={questions[number].question}
           answers={questions[number].answers}
-          userAnswers={userAnswers ? userAnswers[number] : undefined}
+          userAnswer={userAnswers ? userAnswers[number] : undefined}
           cb={checkAnswer}
         />
       )}

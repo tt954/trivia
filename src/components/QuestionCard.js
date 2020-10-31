@@ -12,7 +12,7 @@ const QuestionCard = props => {
       <div>
         {answers.map(answer => (
           <div key={answer}>
-            <button disabled={!!userAnswer} value={answer} onClick={cb}>
+            <button disabled={userAnswer ? true : false} value={answer} onClick={cb}>
               <span dangerouslySetInnerHTML={{ __html: answer }}></span>
             </button>
           </div>
