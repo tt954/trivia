@@ -1,19 +1,5 @@
 question API: [Open Trivia Database](https://opentdb.com/)
 
-font-families: 
-- Apercu-Mono, monospace
-- Apercu-Light, sans-serif
-- Apercu,sans-serif
-- ryo-text-plusn,serif
-
-colors:
---yellow: #FFFF22
---green: #2C4023
---salmon: #EDAE9F
---beet: #8B134D
---slate: #343434
---dark_blue: #001229
-
 ## Available Scripts
 
 In the project directory, you can run:

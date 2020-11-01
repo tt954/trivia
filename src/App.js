@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import { fetchQuestions } from './API';
 
 // Components
 import QuestionCard from './components/QuestionCard';
 import LandingPage from './components/LandingPage';
+import GameOver from './components/GameOver';
 
 const TOTAL_QUESTIONS = 10;
 
@@ -66,7 +67,7 @@ const App = () => {
     console.log(questions);
 
     if (nextQuestion === TOTAL_QUESTIONS) {
-      gameOver(true);
+      setGameOver(true);
     } else {
       setNumber(nextQuestion);
     }
@@ -79,16 +80,17 @@ const App = () => {
 
       <h1 className="title fl">Trivia</h1>
 
-      {landing && <LandingPage 
-        handleDifficulty={handleDifficulty}
-        start={start}
-      />}
+      {landing && 
+        <LandingPage 
+          handleDifficulty={handleDifficulty}
+          start={start}
+        />}
 
       {/* When questions are loading  */}
       {loading && <p>Loading questions...</p>}
       
       {/* When questions are not loading and game is not over */}
-      {!loading && !gameOver && !landing && (
+      {!loading && !gameOver && !landing && 
         <QuestionCard 
           questionNumber={number + 1}
           totalQuestions={TOTAL_QUESTIONS}
@@ -98,11 +100,17 @@ const App = () => {
           checkAnswer={checkAnswer}
           score={score}
           nextQuestion={nextQuestion}
-        />
-      )}
+        />}
 
       {!landing && !loading && !gameOver && userAnswers.length === number + 1 &&
-        <button className="next" onClick={nextQuestion}>Next</button>}
+        <button className="next action-btn" onClick={nextQuestion}>Next</button>}
+
+      {gameOver && !landing &&
+        <GameOver 
+          score={score}
+          userAnswers={userAnswers}
+          restart={restart}
+        />}
 
     </div>
   );
