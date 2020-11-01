@@ -15,7 +15,7 @@ const QuestionCard = props => {
 
       <p className="question-number">Question: {questionNumber} / {totalQuestions}</p>  
 
-      <p className="score">Score: {score}</p>
+      <p className="score">Score: <span>{score}</span></p>
 
       <p className="question" dangerouslySetInnerHTML={{ __html: question }} />
       

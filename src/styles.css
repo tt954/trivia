@@ -109,6 +109,10 @@ h2 { font-size: 36px; }
 .action-btn:hover {
   background: var(--light_blue); }
 
+.score span {
+  color: var(--beet);
+  font-weight: 500; }
+
 .question {
   margin: 10px; }
 
