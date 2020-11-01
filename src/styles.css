@@ -59,7 +59,7 @@ button { cursor: pointer; }
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 100px 200px;
+  padding: 100px 20rem;
   text-align: center; }
 
 button.restart {
@@ -115,13 +115,19 @@ h2 { font-size: 36px; }
 .choices {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center; 
+  margin: 0 8rem; }
 
 .answer-wrapper {
-  margin-bottom: 4px; }
-.answer:hover {
+  background: var(--salmon);
+  padding: 10px 30px;
+  margin: 8px;
+  width: 100%; }
+.answer-wrapper:hover {
   background: var(--green);
   color: var(--yellow); }
+.answer-wrapper span {
+  width: 100%; }
 
 button:disabled, button[disabled] {
   cursor: default;

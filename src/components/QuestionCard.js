@@ -25,21 +25,17 @@ const QuestionCard = props => {
           const userClicked = userAnswer ? userAnswer.answer === answer : false;
 
           return (
-            <div 
+            <button 
               key={answer} 
               className={`answer-wrapper
                 ${correct ? "correct" : "incorrect"}
                 ${userClicked? "clicked" : "notclicked"}`}
+              disabled={userAnswer ? true : false}
+              value={answer} 
+              onClick={checkAnswer}
             >
-              <button 
-                className="answer" 
-                disabled={userAnswer ? true : false}
-                value={answer} 
-                onClick={checkAnswer}
-              >
-                <span dangerouslySetInnerHTML={{ __html: answer }}></span>
-              </button>
-            </div>
+              <span dangerouslySetInnerHTML={{ __html: answer }}></span>
+            </button>
         )})}
       </div>
 
