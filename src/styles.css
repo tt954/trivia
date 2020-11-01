@@ -50,29 +50,34 @@ textarea, button, select {
 
 button { cursor: pointer; }
 
-body {
-  display: flex;
-  justify-content: center;
-}
-
 /* MAIN */
 
 .App {
-  /* background: var(--salmon); */
-  display: relative;
-  margin: 50px 100px;
+  display: flex;
+  position: relative;
+  font-size: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 100px 200px;
   text-align: center;
-  width: 50rem;
+}
+
+button.restart {
+  font-size: 30px;
+  position: absolute !important;
+  top: 15px;
+  right: 30px;
 }
 
 h1 {
   color: var(--dark_blue);
   border-bottom: 1.5px solid var(--dark_blue);
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 400;
   position: relative;
-  margin: 5rem auto 15px;
-  width: fit-content;
+  margin-bottom: 20px;
 }
 
 .fl:after {
@@ -92,8 +97,12 @@ h1 {
   background: var(--yellow);
   border-radius: 50%;
   color: var(--dark_blue);
-  width: 50px; height: 50px;
-  margin: 0 10px;
+  font-size: 16px;
+  width: 60px; height: 60px;
+  margin: 10px 10px; }
+.difficulty button:hover {
+  background: var(--green);
+  color: #fff;
 }
 
 .start, .next {
@@ -107,13 +116,6 @@ h1 {
   background: var(--light_blue);
 }
 
-.restart {
-  display: absolute;
-  font-size: 24px;
-  margin: 20px 24px 0;
-  text-align: right !important;
-}
-
 .question {
   margin: 10px;
 }
@@ -125,7 +127,7 @@ h1 {
 }
 
 .answer-wrapper {
-  width: 200px;
+  margin-bottom: 4px;
 }
 
 .answer:hover {

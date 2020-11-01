@@ -12,7 +12,7 @@ const QuestionCard = props => {
   
   return (
     <div className="question-card">
-      <p className="number">
+      <p className="question-number">
         Question: {questionNumber} / {totalQuestions}
       </p>  
 
