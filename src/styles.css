@@ -2,7 +2,6 @@
   --beet: #8B134D;
   --salmon: #EDAE9F;
   --yellow: #FFFF22;
-  --whitesmoke: #FFFDFC;
   --green: #2C4023;
   --slate: #343434;
   --light_blue: #0A2C49;
@@ -61,15 +60,13 @@ button { cursor: pointer; }
   justify-content: center;
   margin: 0 auto;
   padding: 100px 200px;
-  text-align: center;
-}
+  text-align: center; }
 
 button.restart {
   font-size: 30px;
   position: absolute !important;
   top: 15px;
-  right: 30px;
-}
+  right: 30px; }
 
 h1 {
   color: var(--dark_blue);
@@ -86,12 +83,10 @@ h2 { font-size: 36px; }
   display: block;
   position: absolute;
   height: 15px;
-  left: 15px;
-  right: 15px;
+  left: 15px; right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  z-index: -1;
-}
+  z-index: -1; }
 
 .difficulty button {
   background: var(--yellow);
@@ -102,8 +97,7 @@ h2 { font-size: 36px; }
   margin: 10px 10px; }
 .difficulty button:hover, button.clicked-diff {
   background: var(--green);
-  color: #fff;
-}
+  color: #fff; }
 
 .action-btn {
   background: var(--dark_blue);
@@ -113,33 +107,28 @@ h2 { font-size: 36px; }
   margin: 20px;
   transition: all .15s ease-in-out; }
 .action-btn:hover {
-  background: var(--light_blue);
-}
+  background: var(--light_blue); }
 
 .question {
-  margin: 10px;
-}
+  margin: 10px; }
 
 .choices {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
+  align-items: center; }
 
 .answer-wrapper {
-  margin-bottom: 4px;
-}
-
+  margin-bottom: 4px; }
 .answer:hover {
   background: var(--green);
-  color: var(--yellow);
-}
+  color: var(--yellow); }
+
 button:disabled, button[disabled] {
   cursor: default;
-  color: #999 !important;
-}
+  color: #999 !important; }
 
-.correct.clicked, .correct.notclicked, .cr {
+.correct.clicked, 
+.correct.notclicked, .cr {
   background: var(--green) }
 .incorrect.clicked, .icr {
   background: var(--beet); }
@@ -148,8 +137,8 @@ button:disabled, button[disabled] {
   font-size: 16px;
   list-style-type: decimal; 
   text-align: left; }
-.question-list li {
-  margin-bottom: 6px; }
+  .question-list li {
+    margin-bottom: 6px; }
+
 .ql-answers {
-  color: #fff;
-}
+  color: #fff; }

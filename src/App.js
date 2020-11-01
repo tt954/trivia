@@ -20,11 +20,6 @@ const App = () => {
   const [gameOver, setGameOver] = useState(true);
   const [difficulty, setDifficulty] = useState("easy");
 
-  // Set difficulty
-  // const handleDifficulty = e => {
-  //   setDifficulty(e.target.value);
-  // }
-
   // Start game
   const start = async () => {
     setLanding(false);

@@ -1,4 +1,7 @@
+To start trivia, run `yarn start`
+
 Question API: [Open Trivia Database](https://opentdb.com/)
+
 
 ## Available Scripts
 
