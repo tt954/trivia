@@ -1,8 +1,17 @@
 import React from 'react';
 
 const LandingPage = props => {
-  const { handleDifficulty, start } = props;
+  const { setDifficulty, start } = props;
   const difficulties = ["easy", "medium", "hard"];
+
+  const _onFocus = e => {
+    e.target.classList.toggle("clicked-diff")
+    setDifficulty(e.target.value);
+  }
+
+  const _onBlur = e => {
+    e.target.classList.toggle("clicked-diff");
+  }
 
   return (
     <>
@@ -10,8 +19,10 @@ const LandingPage = props => {
       <div className="difficulty">
         {difficulties.map(difficulty => (
           <button 
+            className="diff-btn"
             value={difficulty} 
-            onClick={handleDifficulty}>
+            onFocus={_onFocus}
+            onBlur={_onBlur}>
               {difficulty}
           </button>
         ))}

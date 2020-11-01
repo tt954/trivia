@@ -12,9 +12,8 @@ const QuestionCard = props => {
   
   return (
     <div className="question-card">
-      <p className="question-number">
-        Question: {questionNumber} / {totalQuestions}
-      </p>  
+
+      <p className="question-number">Question: {questionNumber} / {totalQuestions}</p>  
 
       <p className="score">Score: {score}</p>
 
@@ -24,7 +23,6 @@ const QuestionCard = props => {
         {answers.map(answer => {
           const correct = userAnswer ? userAnswer.correctAnswer === answer : false;
           const userClicked = userAnswer ? userAnswer.answer === answer : false;
-          console.log(userAnswer)
 
           return (
             <div 
@@ -32,8 +30,6 @@ const QuestionCard = props => {
               className={`answer-wrapper
                 ${correct ? "correct" : "incorrect"}
                 ${userClicked? "clicked" : "notclicked"}`}
-              // correct={userAnswer.correctAnswer === answer}
-              // userClicked={userAnswer.answer === answer}
             >
               <button 
                 className="answer" 

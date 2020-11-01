@@ -1,4 +1,4 @@
-question API: [Open Trivia Database](https://opentdb.com/)
+Question API: [Open Trivia Database](https://opentdb.com/)
 
 ## Available Scripts
 

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './styles.css';
-import { fetchQuestions } from './API';
 
 // Components
 import QuestionCard from './components/QuestionCard';
 import LandingPage from './components/LandingPage';
 import GameOver from './components/GameOver';
+
+import { fetchQuestions } from './API';
 
 const TOTAL_QUESTIONS = 10;
 
@@ -19,10 +20,10 @@ const App = () => {
   const [gameOver, setGameOver] = useState(true);
   const [difficulty, setDifficulty] = useState("easy");
 
-  // Set difficultiness 
-  const handleDifficulty = e => {
-    setDifficulty(e.target.value);
-  }
+  // Set difficulty
+  // const handleDifficulty = e => {
+  //   setDifficulty(e.target.value);
+  // }
 
   // Start game
   const start = async () => {
@@ -42,14 +43,17 @@ const App = () => {
     setLoading(false);
   }
 
-  const restart = () => {
-    setLanding(true);
+  // Restart game, take user back to landing page
+  const restart = () => { 
+    setLanding(true); 
   }
 
   const checkAnswer = e => {
     const answer = e.currentTarget.value;
     const correct = questions[number].correct_answer === answer;
     if (correct) setScore(prev => prev + 1);
+
+    // Set up answer object to update userAnswers array
     const answerObject = {
       question: questions[number].question,
       answer, 
@@ -59,12 +63,8 @@ const App = () => {
     setUserAnswers(prev => [...prev, answerObject]);
   }
 
-
   const nextQuestion = () => {
-    // Move onto the next question
     const nextQuestion = number + 1;
-    console.log(userAnswers);
-    console.log(questions);
 
     if (nextQuestion === TOTAL_QUESTIONS) {
       setGameOver(true);
@@ -75,14 +75,20 @@ const App = () => {
 
   return (
     <div className="App">
+      {/* Restart available only when not on landing page */}
       {!landing && 
-        <button className="restart" title="Restart" onClick={restart}>&#10006;</button>}
+        <button 
+          className="restart" 
+          title="Restart" 
+          onClick={restart}>
+            &#10006;
+        </button>}
 
       <h1 className="title fl">Trivia</h1>
 
       {landing && 
         <LandingPage 
-          handleDifficulty={handleDifficulty}
+          setDifficulty={setDifficulty}
           start={start}
         />}
 
@@ -102,6 +108,7 @@ const App = () => {
           nextQuestion={nextQuestion}
         />}
 
+      {/* Next button available only when user has chosen an answer (increasing userAnswers length) */}
       {!landing && !loading && !gameOver && userAnswers.length === number + 1 &&
         <button className="next action-btn" onClick={nextQuestion}>Next</button>}
 
@@ -111,7 +118,6 @@ const App = () => {
           userAnswers={userAnswers}
           restart={restart}
         />}
-
     </div>
   );
 }
