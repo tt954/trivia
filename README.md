@@ -17,5 +17,5 @@ Clone repo and run 🚀 `yarn start`. Open [http://localhost:3000](http://localh
 ## Reflections 
 * Time spent: Research (Day 1), Skeleton code (Day 2), Styling & README (Day 3)
 * Some potential future implementations are adding a scoreboard, UI/UX improvements (e.g, score and question tracker showing correct vs. incorrect questions), and the option to choose a category.
-* Adding typescript to project (similar to the tutorial).
+* Adding typescript to project (similar to the tutorial) and deploying to github-pages.
 
