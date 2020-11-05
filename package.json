@@ -17,7 +17,7 @@
     "start": "yarn && react-scripts start",
     "build": "react-scripts build",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages s -b master -d build"
   },
   "browserslist": {
     "production": [
