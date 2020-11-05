@@ -6,7 +6,7 @@ Refine your trivia skill.
 Landing Page | Question Card
 
 ## Instructions
-Clone repo from the **source** branch and run 🚀 `yarn start`. Open [http://localhost:3000](http://localhost:3000) to play.
+Clone repo and run 🚀 `yarn start`. Open [http://localhost:3000](http://localhost:3000) to play.
 
 
 ## Resources
