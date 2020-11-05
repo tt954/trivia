@@ -6,7 +6,7 @@ Refine your trivia skill.
 Landing Page | Question Card
 
 ## Instructions
-Click [here](https://tt954.github.io/trivia/) to play or Clone repo and run 🚀 `yarn start` then Open [http://localhost:3000](http://localhost:3000) to play.
+Click [here](https://tt954.github.io/trivia/) to play or Clone repo and run 🚀 `yarn start` then open [http://localhost:3000](http://localhost:3000) to play.
 
 
 ## Resources
