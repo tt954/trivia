@@ -43,7 +43,7 @@ const App = () => {
     setLanding(true); 
   }
 
-  const checkAnswer = e => {
+  const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     const answer = e.currentTarget.value;
     const correct = questions[number].correct_answer === answer;
     if (correct) setScore(prev => prev + 1);
