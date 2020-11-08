@@ -1,19 +1,30 @@
 import React from 'react';
 
-const QuestionCard = props => {
-  const { 
-    question, 
-    answers, 
-    checkAnswer, 
-    userAnswer, 
-    questionNumber, 
-    totalQuestions, 
-    score } = props;
-  
-  return (
+type Props = {
+  question: string;
+  answers: string[];
+  checkAnswer: any;
+  userAnswer: string;
+  questionNumber: number;
+  totalQuestions: number;
+  score: number;
+}
+
+const QuestionCard: React.FC<Props> = ({ 
+  question, 
+  answers, 
+  checkAnswer, 
+  userAnswer, 
+  questionNumber, 
+  totalQuestions, 
+  score 
+}) => (
+
     <div className="question-card">
 
-      <p className="question-number">Question: {questionNumber} / {totalQuestions}</p>  
+      <p className="question-number">
+        Question: {questionNumber} / {totalQuestions}
+      </p>  
 
       <p className="score">Score: <span>{score}</span></p>
 
@@ -38,9 +49,8 @@ const QuestionCard = props => {
             </button>
         )})}
       </div>
-
     </div>
-  )
-}
+    
+  );
 
 export default QuestionCard;
