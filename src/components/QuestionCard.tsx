@@ -4,7 +4,7 @@ type Props = {
   question: string;
   answers: string[];
   checkAnswer: any;
-  userAnswer: string;
+  userAnswer: any;
   questionNumber: number;
   totalQuestions: number;
   score: number;
@@ -17,7 +17,7 @@ const QuestionCard: React.FC<Props> = ({
   userAnswer, 
   questionNumber, 
   totalQuestions, 
-  score 
+  score,
 }) => (
 
     <div className="question-card">

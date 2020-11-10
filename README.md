@@ -8,7 +8,6 @@ Landing Page | Question Card
 ## Instructions
 Click [here](https://tt954.github.io/trivia/) to play or Clone repo and run 🚀 `yarn start` then open [http://localhost:3000](http://localhost:3000) to play.
 
-
 ## Resources
 * Built with 👋 ⚛️ [React](https://reactjs.org/docs/create-a-new-react-app.html) utilizing the tutorial from [freeCodeCamp.org](https://www.youtube.com/watch?v=F2JCjVSZlG0).
 * UI Designs inspired by the ✨ [Tandem Website](https://madeintandem.com/).
